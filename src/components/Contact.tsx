@@ -9,7 +9,7 @@ const CHAT_ID = "5034837799";
 type Status = "idle" | "sending" | "sent" | "error";
 
 const inputClass =
-  "w-full rounded-md border border-line bg-ink px-4 py-3 text-sm text-paper placeholder:text-dim outline-none transition-colors focus:border-accent/70 focus:ring-2 focus:ring-accent/15";
+  "w-full rounded-md border border-line bg-ink px-4 py-3 text-base md:text-sm text-paper placeholder:text-dim outline-none transition-colors focus:border-accent/70 focus:ring-2 focus:ring-accent/15";
 
 export default function Contact() {
   const [status, setStatus] = useState<Status>("idle");
@@ -66,7 +66,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="relative py-24 md:py-28">
+    <section id="contact" className="relative py-16 md:py-28">
       <div
         className="absolute -top-24 right-0 h-80 w-80 rounded-full opacity-[0.08] blur-3xl"
         style={{
@@ -81,7 +81,7 @@ export default function Contact() {
           <div className="flex flex-col gap-5 lg:col-span-5">
             {info.map((it, i) => (
               <Reveal key={it.title} delay={i * 80}>
-                <div className="card-lift flex items-center gap-5 rounded-lg border border-line bg-panel p-6 hover:border-accent/40">
+                <div className="card-lift flex items-center gap-3 sm:gap-5 rounded-lg border border-line bg-panel p-4 sm:p-6 hover:border-accent/40">
                   <span className="grid size-13 shrink-0 place-items-center rounded-md border border-accent/30 bg-accent/10 text-accent">
                     <Icon name={it.icon} className="size-6" />
                   </span>
@@ -97,7 +97,7 @@ export default function Contact() {
               </Reveal>
             ))}
             <Reveal delay={240}>
-              <div className="rounded-lg border border-line bg-panel p-6">
+              <div className="rounded-lg border border-line bg-panel p-4 sm:p-6">
                 <h4 className="font-mono text-[11px] tracking-[0.3em] text-dim uppercase">
                   Social Profiles
                 </h4>
@@ -118,7 +118,7 @@ export default function Contact() {
           <Reveal delay={120} className="lg:col-span-7">
             <form
               onSubmit={onSubmit}
-              className="relative h-full rounded-lg border border-line bg-panel p-7 md:p-8"
+              className="relative h-full rounded-lg border border-line bg-panel p-5 md:p-8"
             >
               <div
                 className="absolute top-0 left-8 h-0.5 w-16 bg-accent"
@@ -159,7 +159,8 @@ export default function Contact() {
                   </label>
                   <input
                     id="phone"
-                    type="number"
+                    type="tel"
+                    autoComplete="tel"
                     required
                     value={form.phone}
                     onChange={(e) =>
@@ -212,7 +213,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="mt-2 inline-flex items-center gap-2.5 rounded-md bg-accent px-8 py-3.5 font-mono text-sm font-semibold text-ink transition-all duration-300 hover:bg-[#93c5fd] hover:shadow-[0_0_30px_rgba(96,165,250,0.35)] disabled:cursor-not-allowed disabled:opacity-60"
+                className="mt-2 inline-flex w-full justify-center sm:w-auto items-center gap-2.5 rounded-md bg-accent px-8 py-3.5 font-mono text-sm font-semibold text-ink transition-all duration-300 hover:bg-[#93c5fd] hover:shadow-[0_0_30px_rgba(96,165,250,0.35)] disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {status === "sending" ? "Sending…" : "Send Message"}
                 <Icon

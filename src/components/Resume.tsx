@@ -10,7 +10,7 @@ import { Icon, Reveal, SectionHead } from "./ui";
 function TimelineItem({ item, index }: { item: ResumeItem; index: number }) {
   return (
     <Reveal delay={index * 80}>
-      <div className="group relative border-l border-line pb-10 mb-2 pl-8 last:pb-0">
+      <div className="group relative border-l border-line pb-10 mb-2 pl-5 sm:pl-8 last:pb-0">
         <span
           className="absolute top-0.5 -left-[7px] size-3 rounded-full border-2 border-accent bg-ink transition-all duration-300 group-hover:bg-accent group-hover:shadow-[0_0_14px_rgba(96,165,250,0.7)]"
           aria-hidden
@@ -91,7 +91,7 @@ export default function Resume() {
   return (
     <section
       id="resume"
-      className="relative border-y border-line bg-pit/60 py-24 md:py-28"
+      className="relative border-y border-line bg-pit/60 py-16 md:py-28"
     >
       <div
         className="absolute top-0 right-0 h-72 w-72 rounded-full opacity-10 blur-3xl"
@@ -134,7 +134,7 @@ export default function Resume() {
                       node: (
                         <a
                           href={profile.phoneHref}
-                          className="text-accent hover:underline"
+                          className="min-w-0 break-words text-accent hover:underline"
                         >
                           {profile.phone}
                         </a>
@@ -145,7 +145,7 @@ export default function Resume() {
                       node: (
                         <a
                           href={`mailto:${profile.email}`}
-                          className="text-accent hover:underline"
+                          className="min-w-0 break-words text-accent hover:underline"
                         >
                           {profile.email}
                         </a>

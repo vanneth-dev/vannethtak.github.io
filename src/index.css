@@ -276,3 +276,36 @@ body {
     animation: none;
   }
 }
+
+/* Leave room for the fixed header when following section links. */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+@media (max-width: 767px) {
+  /* Let long labels and URLs shrink inside grid and flex children. */
+  main .grid > *, main .reveal {
+    min-width: 0;
+  }
+
+  footer > div > div {
+    min-width: 0;
+  }
+
+  footer p {
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Syne's extra-wide capitals must fit the padded hero, not the viewport. */
+@media (max-width: 1023px) {
+  .hero-content {
+    container-type: inline-size;
+  }
+
+  .hero-heading {
+    font-size: min(6rem, calc(11.5vw - 0.2875rem));
+    font-size: min(6rem, 11.5cqw);
+  }
+}
+

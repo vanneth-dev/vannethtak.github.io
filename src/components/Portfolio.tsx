@@ -482,7 +482,7 @@ export default function Portfolio() {
   return (
     <section
       id="portfolio"
-      className="relative border-y border-line bg-pit/60 py-24 md:py-28"
+      className="relative border-y border-line bg-pit/60 py-16 md:py-28"
     >
       <div
         className="absolute bottom-0 left-0 h-72 w-72 rounded-full opacity-10 blur-3xl"
@@ -586,7 +586,7 @@ export default function Portfolio() {
             <button
               onClick={closePreview}
               aria-label="Close"
-              className="absolute top-4 right-4 z-10 grid size-10 place-items-center rounded-md border border-line bg-ink text-mist transition-colors hover:border-accent/60 hover:text-accent"
+              className="absolute top-4 right-4 z-10 grid size-11 place-items-center md:size-10 rounded-md border border-line bg-ink text-mist transition-colors hover:border-accent/60 hover:text-accent"
             >
               <Icon name="close" className="size-4" />
             </button>
@@ -616,7 +616,7 @@ export default function Portfolio() {
               </>
             ) : (
               <>
-                <div className="relative overflow-hidden rounded-lg border border-amber/30 bg-panel p-8 text-center md:p-12">
+                <div className="relative overflow-hidden rounded-lg border border-amber/30 bg-panel p-4 text-center sm:p-8 md:p-12">
                   <Seal className="absolute -top-6 -right-6 size-40 text-amber/[0.08]" />
                   <p className="font-mono text-sm tracking-[0.5em] text-amber">
                     COURSERA

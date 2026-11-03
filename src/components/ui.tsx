@@ -212,8 +212,8 @@ export function Reveal({
 
 export function SectionHead({ index, title, sub }: { index: string; title: string; sub: string }) {
   return (
-    <Reveal className="mb-12 md:mb-16">
-      <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.4em] text-accent">
+    <Reveal className="mb-8 md:mb-16">
+      <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.4em] text-accent">
         <span className="text-dim">{"//"} </span>
         {index}
         <span className="text-dim"> — </span>

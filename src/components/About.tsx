@@ -22,14 +22,14 @@ function StatBox({
     <Reveal delay={delay}>
       <div
         ref={ref}
-        className="card-lift group relative h-full overflow-hidden rounded-lg border border-line bg-panel p-6 text-center hover:border-accent/40"
+        className="card-lift group relative h-full overflow-hidden rounded-lg border border-line bg-panel p-4 text-center sm:p-6 hover:border-accent/40"
       >
         <div
           className="absolute -top-10 -right-10 size-24 rounded-full bg-accent/10 blur-2xl transition-opacity group-hover:opacity-100"
           aria-hidden
         />
         <Icon name={icon} className="mx-auto size-8 text-accent" />
-        <p className="mt-4 font-display text-5xl font-bold text-paper">
+        <p className="mt-4 font-display text-4xl font-bold sm:text-5xl text-paper">
           {count}
           <span className="text-accent">{suffix}</span>
         </p>
@@ -117,7 +117,7 @@ const facts: [string, ReactNode][] = [
 export default function About() {
   const age = calcAge(profile.birthYear, profile.birthMonth, profile.birthDay);
   return (
-    <section id="about" className="relative py-24 md:py-28">
+    <section id="about" className="relative py-16 md:py-28">
       <div className="mx-auto max-w-6xl px-5">
         <SectionHead index="01" title="About" sub="Learn more about me" />
 
@@ -190,14 +190,14 @@ export default function About() {
                   <span className="shrink-0 font-semibold text-paper">
                     {label}:
                   </span>
-                  <span className="text-sm text-mist">{value}</span>
+                  <span className="min-w-0 break-words text-sm text-mist">{value}</span>
                 </div>
               ))}
             </div>
           </Reveal>
         </div>
 
-        <div className="mt-20 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid grid-cols-2 gap-3 sm:mt-20 sm:gap-5 lg:grid-cols-4">
           {stats.map((s, i) => (
             <StatBox
               key={s.label}
@@ -210,7 +210,7 @@ export default function About() {
           ))}
         </div>
 
-        <div className="mt-24">
+        <div className="mt-14 md:mt-24">
           <Reveal>
             <p className="mb-3 font-mono text-[11px] tracking-[0.4em] text-dim uppercase">
               {"//"} Toolbox
@@ -228,7 +228,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="mt-24">
+        <div className="mt-14 md:mt-24">
           <Reveal>
             <p className="mb-3 font-mono text-[11px] tracking-[0.4em] text-dim uppercase">
               {"//"} Beyond the terminal
@@ -237,11 +237,11 @@ export default function About() {
               Interests<span className="text-accent">.</span>
             </h3>
           </Reveal>
-          <div className="mt-9 grid grid-cols-2 gap-5 lg:grid-cols-4">
+          <div className="mt-9 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
             {interests.map((it, i) => (
               <Reveal key={it.name} delay={i * 80}>
                 <div
-                  className="card-lift group rounded-lg border border-line bg-panel p-6 text-center hover:border-accent/40"
+                  className="card-lift group rounded-lg border border-line bg-panel p-4 text-center sm:p-6 hover:border-accent/40"
                   style={{ ["--c" as string]: it.color }}
                 >
                   <div
@@ -254,7 +254,7 @@ export default function About() {
                   >
                     <Icon name={it.icon as IconName} className="size-7" />
                   </div>
-                  <h4 className="mt-5 font-display text-lg font-semibold text-paper">
+                  <h4 className="mt-5 font-display text-base font-semibold sm:text-lg text-paper">
                     {it.name}
                   </h4>
                 </div>

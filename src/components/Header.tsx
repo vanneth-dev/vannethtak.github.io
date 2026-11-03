@@ -48,6 +48,22 @@ export default function Header() {
     };
   }, [open]);
 
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    const onResize = () => {
+      if (window.innerWidth >= 768) setOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    window.addEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      window.removeEventListener("resize", onResize);
+    };
+  }, [open]);
+
   return (
     <>
       <header
@@ -91,7 +107,8 @@ export default function Header() {
 
           <button
             onClick={() => setOpen(!open)}
-            aria-label="Toggle menu"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-controls="mobile-navigation"
             aria-expanded={open}
             className="flex size-11 flex-col items-center justify-center gap-1.5 rounded-md border border-line md:hidden"
           >
@@ -117,9 +134,12 @@ export default function Header() {
         </div>
       </header>
 
-      <div
+      <nav
+        id="mobile-navigation"
+        aria-label="Mobile navigation"
+        inert={!open}
         className={cn(
-          "fixed inset-0 z-40 flex flex-col justify-center bg-ink/[0.98] px-8 backdrop-blur-sm transition-all duration-300 md:hidden",
+          "fixed inset-0 z-40 flex flex-col justify-start overflow-y-auto overscroll-contain bg-ink/[0.98] px-6 pt-24 pb-8 sm:px-8 sm:pt-28 backdrop-blur-sm transition-all duration-300 md:hidden",
           open ? "visible opacity-100" : "invisible opacity-0",
         )}
       >
@@ -129,7 +149,7 @@ export default function Header() {
             href={`#${l.id}`}
             onClick={() => setOpen(false)}
             className={cn(
-              "flex items-baseline gap-4 border-b border-line py-5 font-display text-3xl font-bold transition-colors",
+              "flex items-baseline gap-4 border-b border-line py-3 font-display text-2xl sm:py-5 sm:text-3xl font-bold transition-colors",
               active === l.id ? "text-accent" : "text-paper hover:text-accent",
             )}
           >
@@ -142,11 +162,11 @@ export default function Header() {
             <SocialIcon key={s.label} label={s.label} href={s.href} />
           ))}
         </div>
-      </div>
+      </nav>
 
       <section
         id="header"
-        className="relative flex min-h-screen flex-col overflow-hidden pt-32"
+        className="relative flex min-h-svh flex-col overflow-hidden pt-28 md:min-h-screen md:pt-32"
       >
         <div className="bg-grid absolute inset-0" aria-hidden />
         <div
@@ -162,16 +182,17 @@ export default function Header() {
           aria-hidden
         />
 
-        <div className="relative mx-auto w-full max-w-6xl flex-1 px-5">
-          <div className="hero-rise mb-7 inline-flex items-center gap-3 rounded-full border border-line bg-panel/70 py-2 pr-5 pl-3">
-            <span className="pulse-dot size-2 rounded-full bg-accent" />
-            <span className="font-mono text-[11px] tracking-[0.25em] text-mist uppercase">
-              Available for freelance — {profile.location}
+        <div className="hero-content relative mx-auto w-full max-w-6xl flex-1 px-5">
+          <div className="hero-rise mb-7 inline-flex max-w-full items-center gap-3 rounded-full border border-line bg-panel/70 py-2 pr-5 pl-3">
+            <span className="pulse-dot size-2 shrink-0 rounded-full bg-accent" />
+            <span className="font-mono text-[10px] leading-relaxed tracking-[0.12em] text-mist uppercase sm:text-[11px] sm:tracking-[0.25em]">
+              Available for freelance
+              <span className="hidden sm:inline"> — {profile.location}</span>
             </span>
           </div>
 
           <h1
-            className="hero-rise whitespace-nowrap font-display text-[16vw] leading-[0.92] font-extrabold tracking-tight text-paper sm:text-8xl lg:text-[7.2rem]"
+            className="hero-heading hero-rise whitespace-nowrap font-display text-8xl leading-[0.92] font-extrabold tracking-tight text-paper lg:text-[7.2rem]"
             style={{ animationDelay: "0.12s" }}
           >
             VANNETH
@@ -181,7 +202,7 @@ export default function Header() {
           </h1>
 
           <div
-            className="hero-rise mt-8 font-mono text-lg text-mist md:text-2xl"
+            className="hero-rise mt-6 min-h-14 font-mono text-base sm:mt-8 sm:min-h-0 sm:text-lg text-mist md:text-2xl"
             style={{ animationDelay: "0.26s" }}
           >
             I&apos;m a <span className="font-semibold text-paper">{typed}</span>
@@ -196,23 +217,23 @@ export default function Header() {
           </p>
 
           <div
-            className="hero-rise mt-10 flex flex-wrap items-center gap-4"
+            className="hero-rise mt-8 grid grid-cols-2 items-center gap-3 sm:mt-10 sm:flex sm:flex-wrap sm:gap-4"
             style={{ animationDelay: "0.5s" }}
           >
             <a
               href="#portfolio"
-              className="inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 font-mono text-sm font-semibold text-ink transition-all duration-300 hover:bg-[#93c5fd] hover:shadow-[0_0_30px_rgba(96,165,250,0.35)]"
+              className="inline-flex items-center justify-center gap-2 rounded-md bg-accent px-3 py-3 font-mono text-xs sm:px-6 sm:text-sm font-semibold text-ink transition-all duration-300 hover:bg-[#93c5fd] hover:shadow-[0_0_30px_rgba(96,165,250,0.35)]"
             >
               View Portfolio
               <Icon name="arrow" className="size-4" />
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-md border border-line px-6 py-3 font-mono text-sm text-paper transition-colors hover:border-accent/60 hover:text-accent"
+              className="inline-flex items-center justify-center gap-2 rounded-md border border-line px-3 py-3 font-mono text-xs sm:px-6 sm:text-sm text-paper transition-colors hover:border-accent/60 hover:text-accent"
             >
               Contact Me
             </a>
-            <div className="ml-1 flex gap-2">
+            <div className="col-span-2 mt-2 flex gap-2 sm:mt-0 sm:ml-1">
               {profile.socials.map((s) => (
                 <SocialIcon
                   key={s.label}
@@ -225,7 +246,7 @@ export default function Header() {
           </div>
 
           <div
-            className="hero-rise mt-16 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-line pt-7 sm:grid-cols-4"
+            className="hero-rise mt-10 grid sm:mt-16 grid-cols-2 gap-x-6 gap-y-8 border-t border-line pt-7 sm:grid-cols-4"
             style={{ animationDelay: "0.62s" }}
           >
             {[
@@ -251,7 +272,7 @@ export default function Header() {
           </div>
         </div>
 
-        <div className="marquee relative mt-16 w-full overflow-hidden border-y border-line py-4">
+        <div className="marquee relative mt-10 sm:mt-16 w-full overflow-hidden border-y border-line py-4">
           <div className="marquee-track flex w-max">
             <TickerRow />
             <div aria-hidden>
