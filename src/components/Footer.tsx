@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { profile } from "../data";
 import { Icon } from "./ui";
 
@@ -29,6 +30,10 @@ export default function Footer() {
           Crafted by Vanneth Tak
           <Icon name="arrow" className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
         </a>
+
+        <Link to="/login" className="rounded-md border border-line px-4 py-3 font-mono text-sm text-mist transition-colors hover:border-accent hover:text-accent">
+          Sign in
+        </Link>
 
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
