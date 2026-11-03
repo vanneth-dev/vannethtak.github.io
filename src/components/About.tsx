@@ -134,8 +134,11 @@ export default function About() {
               />
               <div className="group relative overflow-hidden rounded-lg border border-line">
                 <img
-                  src=""
+                  src="/images/profile.jpg"
                   alt="Vanneth Tak"
+                  width={724}
+                  height={1086}
+                  loading="lazy"
                   className="block aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-ink/80 px-4 py-3 backdrop-blur-sm">
