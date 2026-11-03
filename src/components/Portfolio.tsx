@@ -71,7 +71,7 @@ function MockBody({
               <div key={i} className="flex flex-1 items-center gap-2">
                 <span
                   className="size-1.5 rounded-full"
-                  style={{ background: i === 0 ? accent : "#2a3a31" }}
+                  style={{ background: i === 0 ? accent : "#414d5c" }}
                 />
                 <span className="h-1.5 flex-1 rounded-full bg-raise" />
                 <span className="h-1.5 w-7 rounded-full bg-raise" />
@@ -183,7 +183,7 @@ function MockBody({
               <span
                 className="relative grid size-8 shrink-0 place-items-center rounded-full"
                 style={{
-                  background: `conic-gradient(${accent} ${p * 3.6}deg, #223029 0deg)`,
+                  background: `conic-gradient(${accent} ${p * 3.6}deg, #36404c 0deg)`,
                 }}
               >
                 <span className="size-5 rounded-full bg-pit" />

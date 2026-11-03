@@ -153,7 +153,7 @@ export default function Header() {
           className="absolute -top-40 left-1/2 h-[520px] w-[820px] -translate-x-1/2 rounded-full opacity-[0.14] blur-3xl"
           style={{
             background:
-              "radial-gradient(closest-side, #18d06e, transparent 70%)",
+              "radial-gradient(closest-side, #60a5fa, transparent 70%)",
           }}
           aria-hidden
         />
@@ -201,7 +201,7 @@ export default function Header() {
           >
             <a
               href="#portfolio"
-              className="inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 font-mono text-sm font-semibold text-ink transition-all duration-300 hover:bg-[#2ee385] hover:shadow-[0_0_30px_rgba(24,208,110,0.35)]"
+              className="inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 font-mono text-sm font-semibold text-ink transition-all duration-300 hover:bg-[#93c5fd] hover:shadow-[0_0_30px_rgba(96,165,250,0.35)]"
             >
               View Portfolio
               <Icon name="arrow" className="size-4" />
@@ -231,7 +231,7 @@ export default function Header() {
             {[
               { k: "Role", v: "Full-Stack Developer" },
               { k: "Base", v: "Phnom Penh, Cambodia" },
-              { k: "Core Stack", v: "Laravel, Node - React, Angular" },
+              { k: "Core Stack", v: "Node.js, Laravel, React, Angular" },
               { k: "Status", v: "Full-Time", accent: true },
             ].map((m) => (
               <div key={m.k}>

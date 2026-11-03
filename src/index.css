@@ -5,15 +5,15 @@
   --font-body: "Manrope", "Kantumruy Pro", sans-serif;
   --font-mono: "JetBrains Mono", "Kantumruy Pro", monospace;
 
-  --color-ink: #090d0b;
-  --color-pit: #0d1310;
-  --color-panel: #111814;
-  --color-raise: #17211b;
-  --color-line: #1f2b24;
-  --color-paper: #e9f2ec;
-  --color-mist: #9db2a6;
-  --color-dim: #67806f;
-  --color-accent: #18d06e;
+  --color-ink: #121417;
+  --color-pit: #181b20;
+  --color-panel: #20242b;
+  --color-raise: #2a3039;
+  --color-line: #36404c;
+  --color-paper: #edf2f8;
+  --color-mist: #b0bac8;
+  --color-dim: #8a98aa;
+  --color-accent: #60a5fa;
   --color-amber: #ffc24b;
   --color-azure: #58a6ff;
   --color-rose: #f0568f;
@@ -24,6 +24,14 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Reserve the sidebar gutter without changing the existing content widths. */
+@media (min-width: 1024px) {
+  #header > .max-w-6xl,
+  main > section > .max-w-6xl {
+    padding-left: 6.5rem;
+  }
+}
+
 body {
   background-color: var(--color-ink);
   color: var(--color-paper);
@@ -32,28 +40,28 @@ body {
 }
 
 ::selection {
-  background: rgba(24, 208, 110, 0.28);
-  color: #eafff3;
+  background: rgba(96, 165, 250, 0.28);
+  color: #eff6ff;
 }
 
 ::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0d1310;
+  background: #181b20;
 }
 ::-webkit-scrollbar-thumb {
-  background: #22312a;
+  background: #414d5c;
   border-radius: 8px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #2f453a;
+  background: #586b82;
 }
 
 .bg-grid {
   background-image:
-    linear-gradient(rgba(233, 242, 236, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(233, 242, 236, 0.035) 1px, transparent 1px);
+    linear-gradient(rgba(237, 242, 248, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(237, 242, 248, 0.035) 1px, transparent 1px);
   background-size: 56px 56px;
   mask-image: radial-gradient(
     ellipse 90% 70% at 50% 0%,
@@ -134,10 +142,10 @@ body {
 @keyframes pulse-dot {
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(24, 208, 110, 0.55);
+    box-shadow: 0 0 0 0 rgba(96, 165, 250, 0.55);
   }
   70% {
-    box-shadow: 0 0 0 8px rgba(24, 208, 110, 0);
+    box-shadow: 0 0 0 8px rgba(96, 165, 250, 0);
   }
 }
 
@@ -173,7 +181,7 @@ body {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(24, 208, 110, 0.55),
+    rgba(96, 165, 250, 0.55),
     transparent
   );
 }
@@ -215,5 +223,56 @@ body {
   }
   .card-lift:hover {
     transform: none;
+  }
+}
+
+.project-preview::backdrop {
+  background: transparent;
+}
+.preview-backdrop {
+  animation: preview-fade-in 300ms ease both;
+}
+.preview-panel {
+  animation: preview-enter 400ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.project-preview.is-closing .preview-backdrop {
+  animation: preview-fade-out 220ms ease both;
+}
+.project-preview.is-closing .preview-panel {
+  animation: preview-exit 220ms ease both;
+}
+@keyframes preview-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes preview-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes preview-enter {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes preview-exit {
+  to {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-preview .preview-panel,
+  .project-preview .preview-backdrop {
+    animation: none;
   }
 }
