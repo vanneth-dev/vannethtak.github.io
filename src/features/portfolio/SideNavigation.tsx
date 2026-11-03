@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { profile } from "../data";
-import { useScrollSpy } from "../hooks";
-import { cn } from "../utils/cn";
-import { Icon, SocialIcon } from "./ui";
+import { profile } from "./data";
+import { useScrollSpy } from "@/shared/hooks";
+import { cn } from "@/shared/utils";
+import { Icon, SocialIcon } from "@/shared/ui";
 
 const sections = [
   { id: "header", label: "Home", icon: "code" },

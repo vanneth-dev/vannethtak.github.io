@@ -4,9 +4,9 @@ import {
   projects,
   type Certificate,
   type Project,
-} from "../data";
-import { cn } from "../utils/cn";
-import { Icon, Reveal, SectionHead, Tag } from "./ui";
+} from "./data";
+import { cn } from "@/shared/utils";
+import { Icon, Reveal, SectionHead, Tag } from "@/shared/ui";
 
 function Bars({ heights, accent }: { heights: number[]; accent: string }) {
   return (

@@ -1,5 +1,5 @@
-import { services } from "../data";
-import { Icon, Reveal, SectionHead, type IconName } from "./ui";
+import { services } from "./data";
+import { Icon, Reveal, SectionHead, type IconName } from "@/shared/ui";
 
 export default function Services() {
   return (
