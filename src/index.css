@@ -55,7 +55,11 @@ body {
     linear-gradient(rgba(233, 242, 236, 0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(233, 242, 236, 0.035) 1px, transparent 1px);
   background-size: 56px 56px;
-  mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 30%, transparent 78%);
+  mask-image: radial-gradient(
+    ellipse 90% 70% at 50% 0%,
+    black 30%,
+    transparent 78%
+  );
 }
 
 .noise-layer {
@@ -166,7 +170,12 @@ body {
 }
 
 .glow-line {
-  background: linear-gradient(90deg, transparent, rgba(24, 208, 110, 0.55), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(24, 208, 110, 0.55),
+    transparent
+  );
 }
 
 .card-lift {

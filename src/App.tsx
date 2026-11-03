@@ -1,11 +1,12 @@
-import { useScrollProgress } from "./hooks";
-import Header from "./components/Header";
 import About from "./components/About";
-import Resume from "./components/Resume";
-import Services from "./components/Services";
-import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Portfolio from "./components/Portfolio";
+import Resume from "./components/Resume";
+import Services from "./components/Services";
+import SideNavigation from "./components/SideNavigation";
+import { useScrollProgress } from "./hooks";
 
 export default function App() {
   const progress = useScrollProgress();
@@ -19,6 +20,7 @@ export default function App() {
         aria-hidden
       />
       <Header />
+      <SideNavigation />
       <main>
         <About />
         <Resume />

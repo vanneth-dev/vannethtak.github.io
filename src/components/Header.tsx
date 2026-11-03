@@ -16,7 +16,10 @@ function TickerRow() {
   return (
     <div className="flex shrink-0 items-center">
       {techTicker.map((t) => (
-        <span key={t} className="flex items-center font-mono text-xs uppercase tracking-[0.3em] text-dim">
+        <span
+          key={t}
+          className="flex items-center font-mono text-xs uppercase tracking-[0.3em] text-dim"
+        >
           <span className="px-6">{t}</span>
           <span className="text-accent">◆</span>
         </span>
@@ -50,7 +53,9 @@ export default function Header() {
       <header
         className={cn(
           "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-          scrolled ? "border-b border-line bg-ink/85 py-3 backdrop-blur-md" : "py-5"
+          scrolled
+            ? "border-b border-line bg-ink/85 py-3 backdrop-blur-md"
+            : "py-5",
         )}
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5">
@@ -70,7 +75,9 @@ export default function Header() {
                 href={`#${l.id}`}
                 className={cn(
                   "relative px-4 py-2 font-mono text-[13px] tracking-wide transition-colors",
-                  active === l.id ? "text-accent" : "text-mist hover:text-paper"
+                  active === l.id
+                    ? "text-accent"
+                    : "text-mist hover:text-paper",
                 )}
               >
                 <span className="mr-1.5 text-[10px] text-dim">0{i + 1}.</span>
@@ -88,9 +95,24 @@ export default function Header() {
             aria-expanded={open}
             className="flex size-11 flex-col items-center justify-center gap-1.5 rounded-md border border-line md:hidden"
           >
-            <span className={cn("h-0.5 w-5 rounded bg-paper transition-all duration-300", open && "translate-y-2 rotate-45")} />
-            <span className={cn("h-0.5 w-5 rounded bg-paper transition-all duration-300", open && "opacity-0")} />
-            <span className={cn("h-0.5 w-5 rounded bg-paper transition-all duration-300", open && "-translate-y-2 -rotate-45")} />
+            <span
+              className={cn(
+                "h-0.5 w-5 rounded bg-paper transition-all duration-300",
+                open && "translate-y-2 rotate-45",
+              )}
+            />
+            <span
+              className={cn(
+                "h-0.5 w-5 rounded bg-paper transition-all duration-300",
+                open && "opacity-0",
+              )}
+            />
+            <span
+              className={cn(
+                "h-0.5 w-5 rounded bg-paper transition-all duration-300",
+                open && "-translate-y-2 -rotate-45",
+              )}
+            />
           </button>
         </div>
       </header>
@@ -98,7 +120,7 @@ export default function Header() {
       <div
         className={cn(
           "fixed inset-0 z-40 flex flex-col justify-center bg-ink/[0.98] px-8 backdrop-blur-sm transition-all duration-300 md:hidden",
-          open ? "visible opacity-100" : "invisible opacity-0"
+          open ? "visible opacity-100" : "invisible opacity-0",
         )}
       >
         {links.map((l, i) => (
@@ -108,7 +130,7 @@ export default function Header() {
             onClick={() => setOpen(false)}
             className={cn(
               "flex items-baseline gap-4 border-b border-line py-5 font-display text-3xl font-bold transition-colors",
-              active === l.id ? "text-accent" : "text-paper hover:text-accent"
+              active === l.id ? "text-accent" : "text-paper hover:text-accent",
             )}
           >
             <span className="font-mono text-xs text-dim">0{i + 1}</span>
@@ -122,14 +144,23 @@ export default function Header() {
         </div>
       </div>
 
-      <section id="header" className="relative flex min-h-screen flex-col overflow-hidden pt-32">
+      <section
+        id="header"
+        className="relative flex min-h-screen flex-col overflow-hidden pt-32"
+      >
         <div className="bg-grid absolute inset-0" aria-hidden />
         <div
           className="absolute -top-40 left-1/2 h-[520px] w-[820px] -translate-x-1/2 rounded-full opacity-[0.14] blur-3xl"
-          style={{ background: "radial-gradient(closest-side, #18d06e, transparent 70%)" }}
+          style={{
+            background:
+              "radial-gradient(closest-side, #18d06e, transparent 70%)",
+          }}
           aria-hidden
         />
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-line to-transparent" aria-hidden />
+        <div
+          className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-line to-transparent"
+          aria-hidden
+        />
 
         <div className="relative mx-auto w-full max-w-6xl flex-1 px-5">
           <div className="hero-rise mb-7 inline-flex items-center gap-3 rounded-full border border-line bg-panel/70 py-2 pr-5 pl-3">
@@ -149,7 +180,10 @@ export default function Header() {
             {/* <span className="text-accent">_</span> */}
           </h1>
 
-          <div className="hero-rise mt-8 font-mono text-lg text-mist md:text-2xl" style={{ animationDelay: "0.26s" }}>
+          <div
+            className="hero-rise mt-8 font-mono text-lg text-mist md:text-2xl"
+            style={{ animationDelay: "0.26s" }}
+          >
             I&apos;m a <span className="font-semibold text-paper">{typed}</span>
             <span className="caret h-[1.05em] translate-y-[0.18em]" />
           </div>
@@ -161,7 +195,10 @@ export default function Header() {
             {profile.tagline}
           </p>
 
-          <div className="hero-rise mt-10 flex flex-wrap items-center gap-4" style={{ animationDelay: "0.5s" }}>
+          <div
+            className="hero-rise mt-10 flex flex-wrap items-center gap-4"
+            style={{ animationDelay: "0.5s" }}
+          >
             <a
               href="#portfolio"
               className="inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 font-mono text-sm font-semibold text-ink transition-all duration-300 hover:bg-[#2ee385] hover:shadow-[0_0_30px_rgba(24,208,110,0.35)]"
@@ -177,7 +214,12 @@ export default function Header() {
             </a>
             <div className="ml-1 flex gap-2">
               {profile.socials.map((s) => (
-                <SocialIcon key={s.label} label={s.label} href={s.href} className="size-11" />
+                <SocialIcon
+                  key={s.label}
+                  label={s.label}
+                  href={s.href}
+                  className="size-11"
+                />
               ))}
             </div>
           </div>
@@ -188,13 +230,22 @@ export default function Header() {
           >
             {[
               { k: "Role", v: "Full-Stack Developer" },
-              { k: "Base", v: "Phnom Penh, KH" },
-              { k: "Core Stack", v: "Laravel · Node · React" },
-              { k: "Status", v: "Freelance — Open", accent: true },
+              { k: "Base", v: "Phnom Penh, Cambodia" },
+              { k: "Core Stack", v: "Laravel, Node - React, Angular" },
+              { k: "Status", v: "Full-Time", accent: true },
             ].map((m) => (
               <div key={m.k}>
-                <p className="font-mono text-[10px] tracking-[0.3em] text-dim uppercase">{m.k}</p>
-                <p className={cn("mt-2 text-sm font-semibold", m.accent ? "text-accent" : "text-paper")}>{m.v}</p>
+                <p className="font-mono text-[10px] tracking-[0.3em] text-dim uppercase">
+                  {m.k}
+                </p>
+                <p
+                  className={cn(
+                    "mt-2 text-sm font-semibold",
+                    m.accent ? "text-accent" : "text-paper",
+                  )}
+                >
+                  {m.v}
+                </p>
               </div>
             ))}
           </div>

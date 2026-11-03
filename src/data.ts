@@ -8,7 +8,7 @@ export const profile = {
   phone: "010 296 011",
   phoneHref: "tel:+85510296011",
   email: "vanneth.dev@gmail.com",
-  website: "https://vannethtak.github.io",
+  website: "https://vanneth-dev.github.io",
   birthday: "18 July 2003",
   birthYear: 2003,
   birthMonth: 6,
@@ -132,6 +132,7 @@ export const interests = [
 ];
 
 export type Project = {
+  image: string;
   id: string;
   title: string;
   description: string;
@@ -144,6 +145,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: "tvet-main",
+    image: "/images/work-tvet-main.png",
     title: "TVET Main",
     description:
       "TVET MIS — the Ministry of Labour & Vocational Training management and information system.",
@@ -154,6 +156,7 @@ export const projects: Project[] = [
   },
   {
     id: "tvet-15m",
+    image: "/images/work-tvet-15m.png",
     title: "TVET 15M",
     description:
       "កម្មវិធីបណ្តុះបណ្តាលជំនាញវិជ្ជាជីវៈ និងបច្ចេកទេសដល់យុវជនមកពីគ្រួសារក្រីក្រ និងគ្រួសារងាយរងហានិភ័យចំនួន ១,៥លាននាក់",
@@ -164,6 +167,7 @@ export const projects: Project[] = [
   },
   {
     id: "tvet-program",
+    image: "/images/work-tvet-program.png",
     title: "TVET Program",
     description: "កម្មវិធីបណ្តុះបណ្តាលជំនាញបច្ចេកទេស និងវិជ្ជាជីវៈទូទៅ",
     variant: "enroll",
@@ -173,6 +177,7 @@ export const projects: Project[] = [
   },
   {
     id: "tvet-rpl",
+    image: "/images/work-tvet-rpl.png",
     title: "TVET RPL",
     description:
       "ប្រព័ន្ធវាយតម្លៃផអែកលើសមត្ថភាព និងការផ្តល់គុណវុឌ្ឍិសម្រាប់កម្ពុជា",
@@ -183,6 +188,7 @@ export const projects: Project[] = [
   },
   {
     id: "job-portal",
+    image: "/images/work-jobseeker.png",
     title: "Job Seeker & Job Provider",
     description: "ប្រព័ន្ធឈ្មោះរកការងារ និង ប្រព័ន្ធរើសកម្លាំងពលកម្ម",
     variant: "jobs",
@@ -192,6 +198,7 @@ export const projects: Project[] = [
   },
   {
     id: "krt-admin",
+    image: "/images/work-krt388.png",
     title: "KRT388FUN Admin Dashboard",
     description:
       "Freelance project — KRT388FUN admin dashboard with analytics and user management.",
