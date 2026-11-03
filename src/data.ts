@@ -47,10 +47,9 @@ export const techTicker = [
   "MySQL",
   "Tailwind CSS",
   "Bootstrap",
-  "AWS",
+  "Cloud Computing",
   "Git & GitHub",
   "REST API",
-  "Swift",
   "Docker",
 ];
 
@@ -327,7 +326,7 @@ export const experience: ResumeItem[] = [
 export const education: ResumeItem[] = [
   {
     title: "Bachelor of Software Engineering",
-    period: "2022 — 2026",
+    period: "December 2022 — August 2026",
     org: "Beltei International University, Phnom Penh, Cambodia",
     orgHref: "https://web.facebook.com/belteiuniversity",
     orgLabel: "facebook page",
@@ -382,7 +381,7 @@ export const education: ResumeItem[] = [
   },
   {
     title: "Short Course on Web Development",
-    period: "2023",
+    period: "August 2023 - October 2023",
     org: "ADITI Academy — studied at Paragon, Phnom Penh, Cambodia",
     orgHref: "https://www.aditi.com.kh/en",
     orgLabel: "website",

@@ -27,7 +27,7 @@ export default function SideNavigation() {
       aria-label="Section sidebar"
       className="pointer-events-none fixed inset-y-24 left-3 z-40 hidden w-16 items-center lg:flex xl:left-6"
     >
-      <div className="pointer-events-auto relative max-h-full w-full overflow-y-auto rounded-full border border-accent/30 bg-ink/80 px-3 py-8 shadow-2xl shadow-black/30 backdrop-blur-2xl transition-colors hover:border-accent/50 hover:bg-ink/95">
+      <div className="pointer-events-auto relative [scrollbar-width:none] [&::-webkit-scrollbar]:hidden max-h-full w-full overflow-y-auto rounded-full border border-accent/30 bg-ink/80 px-3 py-8 shadow-2xl shadow-black/30 backdrop-blur-2xl transition-colors hover:border-accent/50 hover:bg-ink/95">
         <div className="flex flex-col items-center gap-3">
           {sections.map((section) => (
             <a

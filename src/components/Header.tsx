@@ -252,8 +252,8 @@ export default function Header() {
             {[
               { k: "Role", v: "Full-Stack Developer" },
               { k: "Base", v: "Phnom Penh, Cambodia" },
-              { k: "Core Stack", v: "Node.js, Laravel, React, Angular" },
-              { k: "Status", v: "Full-Time", accent: true },
+              { k: "Core Stack", v: "Node.js · Laravel · React · Angular" },
+              { k: "Status", v: "Full-Time — Available", accent: true },
             ].map((m) => (
               <div key={m.k}>
                 <p className="font-mono text-[10px] tracking-[0.3em] text-dim uppercase">
