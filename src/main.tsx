@@ -1,8 +1,8 @@
 import { StrictMode } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { createRoot } from "react-dom/client";
-import "./index.css";
-import App from "./App";
+import "./styles/globals.css";
+import App from "./app/App";
 
 // Restore the route forwarded by public/404.html on GitHub Pages.
 const redirect = new URLSearchParams(window.location.search).get("redirect");

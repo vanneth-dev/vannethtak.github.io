@@ -4,9 +4,12 @@ import {
   projects,
   type Certificate,
   type Project,
-} from "./content";
-import { cn } from "@/lib/utils";
-import { Icon, Reveal, SectionHead, Tag } from "@/components/ui/components";
+} from "../data/content";
+import { cn } from "@/shared/lib/utils";
+import { Icon } from "@/shared/ui/Icon";
+import { Reveal } from "@/shared/ui/Reveal";
+import { SectionHead } from "@/shared/ui/SectionHead";
+import { Tag } from "@/shared/ui/Tag";
 
 function Bars({ heights, accent }: { heights: number[]; accent: string }) {
   return (
