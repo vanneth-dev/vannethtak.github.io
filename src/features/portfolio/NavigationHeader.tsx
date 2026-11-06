@@ -1,8 +1,8 @@
-import { useScrollSpy, useTyped } from "@/shared/hooks";
-import { Icon, SocialIcon } from "@/shared/ui";
-import { cn } from "@/shared/utils";
+import { useScrollSpy, useTyped } from "@/hooks/use-hooks";
+import { Icon, SocialIcon } from "@/components/ui/components";
+import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
-import { profile, techTicker } from "./data";
+import { profile, techTicker } from "./content";
 
 const links = [
   { id: "header", label: "Home" },

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export default function LoginPage() {
+export default function Login() {
   useEffect(() => {
     const previousTitle = document.title;
     document.title = "Sign in — Vanneth Tak";

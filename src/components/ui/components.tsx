@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
-import { useInView } from "./hooks";
-import { cn } from "./utils";
+import { useInView } from "@/hooks/use-hooks";
+import { cn } from "@/lib/utils";
 
 const ICONS: Record<string, ReactNode> = {
   smile: (

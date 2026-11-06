@@ -1,8 +1,8 @@
-import { calcAge } from "@/shared/utils";
+import { calcAge } from "@/lib/utils";
 import type { ReactNode } from "react";
-import { interests, profile, skills, stats } from "./data";
-import { useCountUp, useInView } from "@/shared/hooks";
-import { Icon, Reveal, SectionHead, type IconName } from "@/shared/ui";
+import { interests, profile, skills, stats } from "./content";
+import { useCountUp, useInView } from "@/hooks/use-hooks";
+import { Icon, Reveal, SectionHead, type IconName } from "@/components/ui/components";
 
 function StatBox({
   value,
