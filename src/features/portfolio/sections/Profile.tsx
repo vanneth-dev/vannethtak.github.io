@@ -3,10 +3,9 @@ import type { ReactNode } from "react";
 import { interests, profile, skills, stats } from "../data/content";
 import { useCountUp } from "@/shared/hooks/useCountUp";
 import { useInView } from "@/shared/hooks/useInView";
-import { Icon } from "@/shared/ui/Icon";
+import { Icon, type IconName } from "@/shared/ui/Icon";
 import { Reveal } from "@/shared/ui/Reveal";
 import { SectionHead } from "@/shared/ui/SectionHead";
-import { type IconName } from "@/shared/ui/Icon";
 
 function StatBox({
   value,
@@ -119,7 +118,7 @@ const facts: [string, ReactNode][] = [
   ["Freelance", <span className="text-accent">{profile.freelance}</span>],
 ];
 
-export default function About() {
+export default function Profile() {
   const age = calcAge(profile.birthYear, profile.birthMonth, profile.birthDay);
   return (
     <section id="about" className="relative py-16 md:py-28">
@@ -212,7 +211,7 @@ export default function About() {
               value={s.value}
               suffix={s.suffix}
               label={s.label}
-              icon={s.icon as IconName}
+              icon={s.icon}
               delay={i * 90}
             />
           ))}
@@ -260,7 +259,7 @@ export default function About() {
                       color: it.color,
                     }}
                   >
-                    <Icon name={it.icon as IconName} className="size-7" />
+                    <Icon name={it.icon} className="size-7" />
                   </div>
                   <h4 className="mt-5 font-display text-base font-semibold sm:text-lg text-paper">
                     {it.name}

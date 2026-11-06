@@ -30,7 +30,7 @@ function TickerRow() {
   );
 }
 
-export default function Header() {
+export default function NavigationHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const active = useScrollSpy(links.map((l) => l.id));
@@ -202,14 +202,9 @@ export default function Header() {
             className="hero-heading hero-rise whitespace-nowrap font-display text-8xl leading-[0.92] font-extrabold tracking-tight text-paper lg:text-[7.2rem]"
             style={{ animationDelay: "0.12s" }}
           >
-            <span 
-              // className="text-[#c4d3e5]"
-              >
-                VANNETH
-            </span>
+            <span>VANNETH</span>
             <br />
             <span className="outline-type">TAK</span>
-            {/* <span className="text-accent">_</span> */}
           </h1>
 
           <div

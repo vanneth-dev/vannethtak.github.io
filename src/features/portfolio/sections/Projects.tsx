@@ -438,7 +438,7 @@ type Selected =
   | { kind: "project"; item: Project }
   | { kind: "cert"; item: Certificate };
 
-export default function Portfolio() {
+export default function Projects() {
   const [filter, setFilter] = useState<Filter>("projects");
   const [selected, setSelected] = useState<Selected | null>(null);
 
@@ -527,7 +527,7 @@ export default function Portfolio() {
 
         <div key={filter} className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {filter === "projects"
-            ? (projects as Project[]).map((p, i) => (
+            ? projects.map((p, i) => (
                 <button
                   key={p.id}
                   onClick={() => setSelected({ kind: "project", item: p })}
@@ -552,7 +552,7 @@ export default function Portfolio() {
                   </div>
                 </button>
               ))
-            : (certificates as Certificate[]).map((c, i) => (
+            : certificates.map((c, i) => (
                 <div
                   key={c.id}
                   className="pop-in"

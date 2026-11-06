@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { profile } from "../data/content";
 import { Icon } from "@/shared/ui/Icon";
+import { useFullscreen } from "@/shared/hooks/useFullscreen";
 
-export default function Footer() {
+export default function SiteFooter() {
   const year = new Date().getFullYear();
+  const { isFullscreen, supported, toggle } = useFullscreen();
   return (
     <footer className="border-t border-line bg-pit/80">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-5 py-10 md:flex-row">
@@ -35,13 +37,26 @@ export default function Footer() {
           Sign in
         </Link>
 
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          aria-label="Back to top"
-          className="grid size-11 place-items-center rounded-md border border-line text-mist transition-all duration-300 hover:-translate-y-1 hover:border-accent/60 hover:text-accent"
-        >
-          <Icon name="up" className="size-4" />
-        </button>
+        <div className="flex gap-2">
+          {supported && (
+            <button
+              onClick={toggle}
+              aria-label={isFullscreen ? "Exit full screen" : "Enter full screen"}
+              aria-pressed={isFullscreen}
+              className="grid size-11 place-items-center rounded-md border border-line text-mist transition-all duration-300 hover:-translate-y-1 hover:border-accent/60 hover:text-accent"
+            >
+              <Icon name={isFullscreen ? "compress" : "expand"} className="size-4" />
+            </button>
+          )}
+
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            aria-label="Back to top"
+            className="grid size-11 place-items-center rounded-md border border-line text-mist transition-all duration-300 hover:-translate-y-1 hover:border-accent/60 hover:text-accent"
+          >
+            <Icon name="up" className="size-4" />
+          </button>
+        </div>
       </div>
     </footer>
   );

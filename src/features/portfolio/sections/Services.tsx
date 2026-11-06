@@ -2,7 +2,6 @@ import { services } from "../data/content";
 import { Icon } from "@/shared/ui/Icon";
 import { Reveal } from "@/shared/ui/Reveal";
 import { SectionHead } from "@/shared/ui/SectionHead";
-import { type IconName } from "@/shared/ui/Icon";
 
 export default function Services() {
   return (
@@ -18,7 +17,7 @@ export default function Services() {
                   0{i + 1}
                 </span>
                 <div className="grid size-13 place-items-center rounded-md border border-line bg-pit text-mist transition-all duration-300 group-hover:border-accent/50 group-hover:bg-accent/10 group-hover:text-accent">
-                  <Icon name={s.icon as IconName} className="size-6" />
+                  <Icon name={s.icon} className="size-6" />
                 </div>
                 <h4 className="mt-6 font-display text-lg font-bold text-paper transition-colors group-hover:text-accent">
                   {s.title}

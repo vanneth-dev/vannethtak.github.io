@@ -135,6 +135,43 @@ const ICONS: Record<string, ReactNode> = {
   check: <path d="m5 12 5 5L20 7" />,
   plus: <path d="M12 5v14M5 12h14" />,
   close: <path d="M6 6l12 12M18 6 6 18" />,
+  lock: (
+    <>
+      <rect x="4.5" y="10.5" width="15" height="10" rx="2" />
+      <path d="M8 10.5V7a4 4 0 0 1 8 0v3.5" />
+      <path d="M12 14.5v2" />
+    </>
+  ),
+  eye: (
+    <>
+      <path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z" />
+      <circle cx="12" cy="12" r="3" />
+    </>
+  ),
+  "eye-off": (
+    <>
+      <path d="M10.6 6.1A9 9 0 0 1 12 6c6 0 9.5 6 9.5 6a16 16 0 0 1-3 3.6" />
+      <path d="M6.5 7.9A16 16 0 0 0 2.5 12S6 18 12 18a9 9 0 0 0 3.4-.65" />
+      <path d="M9.9 9.9a3 3 0 0 0 4.2 4.2" />
+      <path d="m3 3 18 18" />
+    </>
+  ),
+  expand: (
+    <>
+      <path d="M8 3H3v5" />
+      <path d="M16 3h5v5" />
+      <path d="M21 16v5h-5" />
+      <path d="M3 16v5h5" />
+    </>
+  ),
+  compress: (
+    <>
+      <path d="M8 3v5H3" />
+      <path d="M16 3v5h5" />
+      <path d="M21 16h-5v5" />
+      <path d="M3 16h5v5" />
+    </>
+  ),
 };
 
 export type IconName = keyof typeof ICONS;

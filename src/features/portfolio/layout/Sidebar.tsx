@@ -16,7 +16,7 @@ const sections = [
 
 const sectionIds = sections.map(({ id }) => id);
 
-export default function SideNavigation() {
+export default function Sidebar() {
   const active = useScrollSpy(sectionIds);
   const [showSocials, setShowSocials] = useState(true);
 

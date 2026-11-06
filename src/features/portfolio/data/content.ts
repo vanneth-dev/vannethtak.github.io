@@ -1,3 +1,5 @@
+import { type IconName } from "@/shared/ui/Icon";
+
 export const profile = {
   name: "Vanneth Tak",
   roles: ["Full-Stack Developer", "Freelancer", "Software Engineer"],
@@ -53,7 +55,14 @@ export const techTicker = [
   "Docker",
 ];
 
-export const stats = [
+export type Stat = {
+  value: number;
+  suffix: string;
+  label: string;
+  icon: IconName;
+};
+
+export const stats: Stat[] = [
   {
     value: 1,
     suffix: "",
@@ -107,7 +116,13 @@ export const skills = [
   },
 ];
 
-export const interests = [
+export type Interest = {
+  name: string;
+  color: string;
+  icon: IconName;
+};
+
+export const interests: Interest[] = [
   {
     name: "Coding",
     color: "#f5b759",
@@ -240,7 +255,13 @@ export const certificates: Certificate[] = [
   },
 ];
 
-export const services = [
+export type Service = {
+  title: string;
+  body: string;
+  icon: IconName;
+};
+
+export const services: Service[] = [
   {
     title: "Full-Stack Web Development",
     body: "Build scalable web applications with Laravel, Node.js, React, Angular, Tailwind CSS and Bootstrap.",

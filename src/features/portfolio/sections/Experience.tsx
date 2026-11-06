@@ -89,7 +89,7 @@ function TimelineItem({ item, index }: { item: ResumeItem; index: number }) {
   );
 }
 
-export default function Resume() {
+export default function Experience() {
   return (
     <section
       id="resume"

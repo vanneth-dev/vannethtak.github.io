@@ -1,6 +1,16 @@
 import { useEffect, useRef } from "react";
 
-export type CursorEffectStyle = "none" | "sparkles" | "bubbles" | "fireflies" | "snow" | "confetti";
+export type CursorEffectStyle =
+  | "none"
+  | "sparkles"
+  | "bubbles"
+  | "fireflies"
+  | "snow"
+  | "confetti"
+  | "stars"
+  | "hearts"
+  | "embers"
+  | "trail";
 
 /** Decorative effects behind the cursor; never intercept clicks. */
 export default function CursorEffect({ effect = "sparkles" }: { effect?: CursorEffectStyle }) {
@@ -40,7 +50,8 @@ export default function CursorEffect({ effect = "sparkles" }: { effect?: CursorE
         const age = (now - point.born) / 1000;
         const drift = Math.sin(age * 5 + point.seed) * 12;
         const x = point.x + drift;
-        const y = point.y + (effect === "snow" || effect === "confetti" ? age * 55 : -age * 35);
+        const falls = effect === "snow" || effect === "confetti" || effect === "hearts";
+        const y = point.y + (falls ? age * 55 : -age * 35);
         ctx.save();
         ctx.translate(x, y);
         ctx.globalAlpha = (1 - age) * .8;
@@ -92,6 +103,43 @@ export default function CursorEffect({ effect = "sparkles" }: { effect?: CursorE
           ctx.fillStyle = colors[Math.floor(point.seed) % colors.length];
           ctx.scale(Math.cos(age * 8), 1);
           ctx.fillRect(-point.size / 2, -point.size / 3, point.size, point.size * .65);
+        } else if (effect === "stars") {
+          const r = point.size * (1 - age);
+          ctx.rotate(point.seed + age * 2);
+          ctx.fillStyle = "#fde68a";
+          for (let tip = 0; tip < 5; tip++) {
+            ctx.lineTo(0, -r);
+            ctx.rotate(Math.PI / 5);
+            ctx.lineTo(0, -r * .45);
+            ctx.rotate(Math.PI / 5);
+          }
+          ctx.closePath();
+          ctx.fill();
+        } else if (effect === "hearts") {
+          const r = point.size * .5 * (1 - age * .4);
+          ctx.rotate(Math.sin(age * 4 + point.seed) * .3);
+          ctx.fillStyle = "#fb7185";
+          ctx.moveTo(0, r * .9);
+          ctx.bezierCurveTo(r * 1.4, -r * .4, r * .5, -r * 1.3, 0, -r * .5);
+          ctx.bezierCurveTo(-r * .5, -r * 1.3, -r * 1.4, -r * .4, 0, r * .9);
+          ctx.closePath();
+          ctx.fill();
+        } else if (effect === "embers") {
+          ctx.globalAlpha *= .5 + .5 * Math.sin(age * 12 + point.seed) ** 2;
+          const r = point.size * .4 * (1 - age);
+          const colors = ["#fb923c", "#f97316", "#fbbf24"];
+          ctx.fillStyle = colors[Math.floor(point.seed) % colors.length];
+          ctx.shadowColor = "#f97316";
+          ctx.shadowBlur = 10;
+          ctx.arc(0, 0, r, 0, Math.PI * 2);
+          ctx.fill();
+        } else if (effect === "trail") {
+          const r = point.size * (1 - age) * .9;
+          ctx.fillStyle = "#93c5fd";
+          ctx.shadowColor = "#60a5fa";
+          ctx.shadowBlur = 8;
+          ctx.arc(0, 0, r, 0, Math.PI * 2);
+          ctx.fill();
         }
         ctx.restore();
       }
