@@ -30,7 +30,7 @@ export const profile = {
     },
     {
       label: "Facebook",
-      href: "https://www.facebook.com/vanneth.tak18",
+      href: "https://www.facebook.com/vannethtak/",
     },
   ],
 };

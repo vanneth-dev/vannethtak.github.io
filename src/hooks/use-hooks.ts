@@ -142,11 +142,3 @@ export function useScrollProgress() {
   }, []);
   return progress;
 }
-
-export function calcAge(year: number, month: number, day: number) {
-  const now = new Date();
-  let age = now.getFullYear() - year;
-  const m = now.getMonth();
-  if (m < month || (m === month && now.getDate() < day)) age -= 1;
-  return age;
-}

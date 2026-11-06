@@ -1,8 +1,8 @@
+import { useScrollSpy, useTyped } from "@/hooks/use-hooks";
+import { Icon, SocialIcon } from "@/components/ui/components";
+import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
-import { profile, techTicker } from "../data";
-import { useScrollSpy, useTyped } from "../hooks";
-import { cn } from "../utils/cn";
-import { Icon, SocialIcon } from "./ui";
+import { profile, techTicker } from "./content";
 
 const links = [
   { id: "header", label: "Home" },
@@ -76,11 +76,16 @@ export default function Header() {
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5">
           <a href="#header" className="group flex items-center gap-3">
-            <span className="grid size-10 place-items-center rounded-md border border-accent/40 bg-accent/10 font-display text-sm font-bold text-accent">
+            <span className="grid size-10 place-items-center rounded-md border border-accent/40 bg-accent/10 font-display text-lg font-bold text-accent">
               VT
             </span>
-            <span className="font-mono text-sm text-mist transition-colors group-hover:text-paper">
-              vanneth<span className="text-accent">.</span>tak
+            <span className="flex flex-col gap-1 font-mono">
+              <span className="text-sm text-mist transition-colors group-hover:text-paper">
+                Vanneth<span className="text-accent">.</span>Tak
+              </span>
+              <span className="min-h-4 text-[10px] leading-4 text-accent sm:text-[11px]">
+                {profile.roles[0]}
+              </span>
             </span>
           </a>
 
