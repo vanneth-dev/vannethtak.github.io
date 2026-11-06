@@ -1,8 +1,12 @@
-import { calcAge } from "@/lib/utils";
+import { calcAge } from "@/shared/lib/utils";
 import type { ReactNode } from "react";
-import { interests, profile, skills, stats } from "./content";
-import { useCountUp, useInView } from "@/hooks/use-hooks";
-import { Icon, Reveal, SectionHead, type IconName } from "@/components/ui/components";
+import { interests, profile, skills, stats } from "../data/content";
+import { useCountUp } from "@/shared/hooks/useCountUp";
+import { useInView } from "@/shared/hooks/useInView";
+import { Icon } from "@/shared/ui/Icon";
+import { Reveal } from "@/shared/ui/Reveal";
+import { SectionHead } from "@/shared/ui/SectionHead";
+import { type IconName } from "@/shared/ui/Icon";
 
 function StatBox({
   value,
@@ -135,10 +139,10 @@ export default function About() {
               />
               <div className="group relative overflow-hidden rounded-lg border border-line">
                 <img
-                  src="/images/profile.jpg"
+                  src="/images/profile-studio-v2.jpg"
                   alt="Vanneth Tak"
-                  width={724}
-                  height={1086}
+                  width={1122}
+                  height={1402}
                   loading="lazy"
                   className="block aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -152,7 +156,7 @@ export default function About() {
                   </span>
                 </div>
               </div>
-              <p className="mt-6 text-center font-mono text-[11px] tracking-[0.3em] text-dim uppercase lg:text-left">
+              <p className="mt-4 ml-3 text-center font-mono text-[11px] tracking-[0.3em] text-dim uppercase lg:text-left">
                 Developer — Age {age}
               </p>
             </div>

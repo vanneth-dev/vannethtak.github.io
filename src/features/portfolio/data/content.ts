@@ -11,7 +11,7 @@ export const profile = {
   website: "https://vanneth-dev.github.io",
   birthday: "18 July 2003",
   birthYear: 2003,
-  birthMonth: 6,
+  birthMonth: 7,
   birthDay: 18,
   degree: "Software Engineering",
   freelance: "Available",

@@ -1,7 +1,10 @@
 import { useState, type FormEvent } from "react";
-import { profile } from "./content";
-import { cn } from "@/lib/utils";
-import { Icon, Reveal, SectionHead, SocialIcon } from "@/components/ui/components";
+import { profile } from "../data/content";
+import { cn } from "@/shared/lib/utils";
+import { Icon } from "@/shared/ui/Icon";
+import { Reveal } from "@/shared/ui/Reveal";
+import { SectionHead } from "@/shared/ui/SectionHead";
+import { SocialIcon } from "@/shared/ui/SocialIcon";
 
 const BOT_TOKEN = "7671448373:AAFCOr-sBC0rMA35uP-ibiwsjKQzzYZ0ZBg";
 const CHAT_ID = "5034837799";

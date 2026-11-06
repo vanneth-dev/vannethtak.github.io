@@ -1,5 +1,8 @@
-import { services } from "./content";
-import { Icon, Reveal, SectionHead, type IconName } from "@/components/ui/components";
+import { services } from "../data/content";
+import { Icon } from "@/shared/ui/Icon";
+import { Reveal } from "@/shared/ui/Reveal";
+import { SectionHead } from "@/shared/ui/SectionHead";
+import { type IconName } from "@/shared/ui/Icon";
 
 export default function Services() {
   return (

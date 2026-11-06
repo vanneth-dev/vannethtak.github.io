@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { profile } from "./content";
-import { Icon } from "@/components/ui/components";
+import { profile } from "../data/content";
+import { Icon } from "@/shared/ui/Icon";
 
 export default function Footer() {
   const year = new Date().getFullYear();

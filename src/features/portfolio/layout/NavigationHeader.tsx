@@ -1,8 +1,10 @@
-import { useScrollSpy, useTyped } from "@/hooks/use-hooks";
-import { Icon, SocialIcon } from "@/components/ui/components";
-import { cn } from "@/lib/utils";
+import { useScrollSpy } from "@/shared/hooks/useScrollSpy";
+import { useTyped } from "@/shared/hooks/useTyped";
+import { Icon } from "@/shared/ui/Icon";
+import { SocialIcon } from "@/shared/ui/SocialIcon";
+import { cn } from "@/shared/lib/utils";
 import { useEffect, useState } from "react";
-import { profile, techTicker } from "./content";
+import { profile, techTicker } from "../data/content";
 
 const links = [
   { id: "header", label: "Home" },
@@ -200,7 +202,11 @@ export default function Header() {
             className="hero-heading hero-rise whitespace-nowrap font-display text-8xl leading-[0.92] font-extrabold tracking-tight text-paper lg:text-[7.2rem]"
             style={{ animationDelay: "0.12s" }}
           >
-            VANNETH
+            <span 
+              // className="text-[#c4d3e5]"
+              >
+                VANNETH
+            </span>
             <br />
             <span className="outline-type">TAK</span>
             {/* <span className="text-accent">_</span> */}

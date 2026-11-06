@@ -4,8 +4,10 @@ import {
   experience,
   profile,
   type ResumeItem,
-} from "./content";
-import { Icon, Reveal, SectionHead } from "@/components/ui/components";
+} from "../data/content";
+import { Icon } from "@/shared/ui/Icon";
+import { Reveal } from "@/shared/ui/Reveal";
+import { SectionHead } from "@/shared/ui/SectionHead";
 
 function TimelineItem({ item, index }: { item: ResumeItem; index: number }) {
   return (
